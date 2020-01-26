@@ -9,13 +9,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
         <script type="text/javascript" src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
+      
 <style>
    body{
      background-color: #8B8673;
@@ -26,57 +23,85 @@
     </head>
 <body> 
 
-  <div style="float:left; width:29%; margin-top:8%; margin-left:5%;">  
-    <div style="width: 70%; overflow: hidden; border-radius: 10px; border-style: solid; border-width: 1px;">
-    <img id="image0" src="./DosMU/Age1.jpeg" style="width:120%; margin : -10% ;" />
-    </div> 
-    <div style="margin-top:4%;margin-left:3%; width:19vw" > 
-    <img src="./arriere.png" onclick="returnImage(this);" style="width:9vw;height:5vw;"/> 
-    <img src="./avant.png" onclick="changeImage(this);"  style="width:9vw;height:5vw;"/></div>
+
+  <div style="float:left; width:29%; margin-top:1%;">
+    
+    
+    
+    <div style="margin-left:5vw;width: 70%;margin-top:5vw">
+        <div style="overflow: hidden; border-radius: 10px; border-style: solid; border-width: 1px;">
+            <img id="image0" src="./DosMU/Age1.jpeg" style="width:120%; margin : -10% ;" />
+        </div> 
+        <div style="margin-top:4%;margin-left:3%; width:19vw" > 
+            <img src="./arriere.png" onclick="returnImage(this);" style="width:9vw;height:5vw;"/> 
+            <img src="./avant.png" onclick="changeImage(this);"  style="width:9vw;height:5vw;"/>
+        </div>
+    </div>
+    
+    
+    
   </div>
+  
   
   
   <div style="float:left; width:40%; height:100vw ">
         <div style="overflow: hidden;border-radius: 10px;margin:5px ;border-style: solid; border-width: 1px;"><img id="compteTour" src="./AgeTour.jpg" style="width:100%"/></div>
         <div style="overflow: hidden;border-radius: 10px;margin:5px ;border-style: solid; border-width: 1px;"><img id="objectifsIA" src="./MU.jpg" style="width:100%"/></div>
-        <div id ="tour" style="position: absolute; left: 37.8vw; top: 6.32vw; width: 3vw; height: 3vw ; border-radius: 10px;background: #0B243B;">
+        <div id ="tour" style="position: absolute; left: 32.86vw; top: 6.32vw; width: 3vw; height: 3vw ; border-radius: 10px;background: #0B243B;">
             </div>
-        <div id ="age" style="position: absolute; left: 45vw; top: 17.1vw; width: 3vw; height: 3vw ; border-radius: 10px;background: #0B243B;">
+        <div id ="age" style="position: absolute; left: 40.2vw; top: 17.0vw; width: 3vw; height: 3vw ; border-radius: 10px;background: #0B243B;">
         </div>
+        <div class="dropdown" style="position: absolute; left: 38.7vw; top: 24.1vw;">
+            <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:20vw;background-color:#69422B;color:white;">
+                Nouvelle partie
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="reset" onclick="document.location.reload(false);">Recommencer une partie</a>
+            </div>
+    </div>
   </div>
   
   
+  <nav class="navbar navbar-expand-lg">
+       
+ 
+ 
+        <div class="dropdown" style="float:left;margin-top:10vw"">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#69422B; color:white;">
+                Choix de l'I.A.
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="mu" onclick="choiceMu(this);">Empire de Mu</a>
+                <a class="dropdown-item" id="shangri" onclick="choiceShangri(this);">Shangri-La l'Eternelle</a>
+                <a class="dropdown-item" href="#">A suivre...</a>
+            </div>
+        </div>
+        
+        <div class="dropdown" style="float:left;margin-top:10vw">
+            <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#69422B; color:white;">
+                Français
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" onclick="francais(this);">Français</a>
+                <a class="dropdown-item" onclick="english(this);">English</a>
+            </div>
+        </div>
+    </nav>
   
-  <div style="float:left; width:20%;margin-left:5%; margin-top:10%;">
-      
-      
-           <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Version Français/English
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" onclick="francais(this);">Français</a>
-    <a class="dropdown-item" onclick="english(this);">English</a>
-  </div>
+  <div class="dropdown" style="margin-top:30vw;">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Des remarques, des idées ?
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="https://www.trictrac.net/forum/sujet/mode-solo-dominations-en-ligne" role="button">Sujet du forum sur Trictrac</a>
+                <a class="dropdown-item" href="https://boardgamegeek.com/thread/2355024/solo-mode-webapp" role="button">Topic on BGG</a>
+            </div>
+        </div>
   
-      
-      <div class="dropdown" style="margin-top:10%">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Choix de l'I.A.
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" onclick="choiceMu(this);">Empire de Mu</a>
-    <a class="dropdown-item" onclick="choiceShangri(this);">Shangri-La l'Eternelle</a>
-    <a class="dropdown-item" href="#">A suivre...</a>
-  </div>
-  
+ </div>
  
   
-</div>
-      
-      
-    <div style="float:left;" id="test"></div>
-  
+   
 </body>
 <script type="text/javascript">
     
@@ -99,14 +124,14 @@
         compteur +=1;
         v = "./Face"+iA+"/" + tableauAges[age] + langue +"/" + tableauCartes[age*6+tour];
         x.setAttribute("src", v);
-        var xxTour= 37.86 + tour*7.33;
+        var xxTour= 32.86 + tour*7.33;
         document.getElementById('tour').style.visibility = "visible";
         document.getElementById('tour').style.left = xxTour + "vw";
         }
     else if (age<2) {
         age += 1;
         v = "./Dos"+iA+"/" + tableauAges[age] + langue +".jpeg" ;
-        var xxAge= 45 + (age)*7.45;
+        var xxAge= 40.2 + (age)*7.33;
         tour = -1;
         x.setAttribute("src", v);
         document.getElementById('tour').style.visibility = "hidden";
@@ -123,7 +148,7 @@
         compteur -=1;
         v = "./Face"+iA+"/" + tableauAges[age] + langue +"/" + tableauCartes[age*6+tour];
         x.setAttribute("src", v);
-        var xxTour= 37.86 + tour*7.33;
+        var xxTour= 32.86 + tour*7.33;
         document.getElementById('tour').style.visibility = "visible";
         document.getElementById('tour').style.left = xxTour + "vw";
         }
@@ -131,7 +156,7 @@
         age -= 1;
         tour = 5;
         v = "./Dos"+iA+"/" + tableauAges[age] + langue +".jpeg" ;
-        var xxAge= 45 + (age)*7.45;
+        var xxAge= 40.2 + (age)*7.33;
         x.setAttribute("src", v);
         document.getElementById('tour').style.visibility = "hidden";
         document.getElementById('age').style.left = xxAge+"vw";
@@ -172,11 +197,40 @@
 
     function francais(element){
     langue ="";
+    var x = document.getElementById("dropdownMenuButton1");
+    x.innerHTML="Nouvelle Partie";
+    x = document.getElementById("reset");
+    x.innerHTML="Recommencer une partie";
+    x = document.getElementById("mu");
+    x.innerHTML="Empire de Mu";
+    x = document.getElementById("shangri");
+    x.innerHTML="Shangri-La l'Eternelle";
+    x = document.getElementById("dropdownMenuButton2");
+    x.innerHTML="Choix de l'I.A.";
+    x = document.getElementById("dropdownMenuButton3");
+    x.innerHTML="Français";
+    x = document.getElementById("dropdownMenuButton4");
+    x.innerHTML="Des remarques, des idées ?";
     changelangue();
     }
 
     function english(element){
     langue ="en";
+    var x = document.getElementById("dropdownMenuButton1");
+    x.innerHTML="New Game";
+    x = document.getElementById("reset");
+    x.innerHTML="Start a new game";
+    x = document.getElementById("mu");
+    x.innerHTML="Mu Empire";
+    x = document.getElementById("shangri");
+    x.innerHTML="Shangri-La the Eternal";
+    x = document.getElementById("dropdownMenuButton2");
+    x.innerHTML="A.I. Choice";
+    x = document.getElementById("dropdownMenuButton3");
+    x.innerHTML="English";
+    x = document.getElementById("dropdownMenuButton4");
+    x.innerHTML="Any remark, idea ?";
+    changelangue();
     changelangue();
     }
     
